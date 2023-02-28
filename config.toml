@@ -1,0 +1,79 @@
+baseURL = "https://www.hpcworkshops.com"
+languageCode = "en-us"
+title = "AWS HPC Workshops"
+theme = "hugo-theme-learn"
+uglyurls = true
+sectionPagesMenu = "main"
+pygmentsCodeFences = true
+
+[blackfriday]
+hrefTargetBlank = true
+
+[params]
+editURL = "https://github.com/aws-samples/aws-hpc-tutorials/tree/master/content/"
+themeVariant = "mine"
+showVisitedLinks = true
+description = "AWS HPC Workshops"
+disableSearch = false
+disableAssetsBusting = false
+disableLanguageSwitchingButton = true
+disableShortcutsTitle = false
+disableLandingPageButton = true
+
+[outputs]
+home = [ "HTML", "AMP", "RSS", "JSON"]
+page = [ "HTML", "AMP"]
+
+
+[privacy]
+  [privacy.disqus]
+    disable = false
+  [privacy.instagram]
+    disable = false
+    simple = false
+  [privacy.twitter]
+    disable = false
+    enableDNT = false
+    simple = false
+  [privacy.vimeo]
+    disable = false
+    simple = false
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = false
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-flask'></i> Conferences Worshops"
+url = "/conferences.html"
+weight = 21
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-bullhorn'></i> External Worshops"
+url = "/external.html"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github"
+url = "https://github.com/aws-samples/aws-hpc-tutorials"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-bookmark'></i> AWS - HPC"
+url = "https://aws.amazon.com/hpc/"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-users'></i> Authors"
+url = "/authors.html"
+weight = 23
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-envelope'></i> Feedback / Questions?"
+url = "mailto:aws-hpc-workshops@amazon.com"
+weight = 30
+
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-tags'></i> Tags"
+url = "/tags"
+weight = 40
