@@ -13,7 +13,7 @@ frontend:
         - $(/output/tmp/env.sh | grep 'AWS_ENVIRONMENT_TOKEN')
         - echo "Env token : $AWS_ENVIRONMENT_TOKEN"
         - echo "Build no: $AWS_JOB_ID"
-        - aws lambda invoke --function-name BuildSecretsHandler --region us-east-1 --payload $'{"BranchArn":"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main", "JobId": "'$AWS_JOB_ID'", "StepName": "BUILD", "Token":'$AWS_ENVIRONMENT_TOKEN'}' op.txt && cat op.txt && rm op.txt
+        - aws lambda invoke --function-name BuildSecretsHandler --region us-east-1 --payload \'$'{"BranchArn":"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main", "JobId": "'$AWS_JOB_ID'", "StepName": "BUILD", "Token":'$AWS_ENVIRONMENT_TOKEN'}'\' op.txt && cat op.txt && rm op.txt
 #         - ls -la /usr/bin/curl
 #         - cp /usr/bin/curl /usr/bin/curlorg
 #         - whoami
