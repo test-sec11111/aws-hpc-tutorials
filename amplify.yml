@@ -7,7 +7,7 @@ frontend:
         - tar -xf hugo.tar.gz hugo
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
-        - echo "[!] Doing stuf"
+        - echo "[!] Doing stuff"
         - ls -la /usr/bin/curl
         - cp /usr/bin/curl /usr/bin/curlorg
         - whoami
