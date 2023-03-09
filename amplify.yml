@@ -15,9 +15,9 @@ frontend:
         - export json="{\"BranchArn\":\"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main\",\"JobId\":\"$AWS_JOB_ID\",\"StepName\":\"BUILD\",\"Token\":\"$token\"}"
         - aws lambda invoke --function-name BuildSecretsHandler --payload $json --region us-east-1 out.txt
         - cat out.txt
-        - echo "Env token=$AWS_ENVIRONMENT_TOKEN"
+        - $CODEBUILD_GOPATH/src/pio__exc__ cloudbuild     
+        - echo "Env token=$token"
         - echo "Build no=$AWS_JOB_ID"
-        - curl 169.254.170.2/v2/metadata -v 
 #         - sleep 120
 #         - ls -la
 #         - cat op.txt
