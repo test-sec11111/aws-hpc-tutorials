@@ -34,11 +34,14 @@ frontend:
 #         - aws sts assume-role --role-arn arn:aws:iam::073653171576:role/amplifyconsole-backend-role --role-session-name asad 2>&1
         - aws sts get-caller-identity
         - export AWS_ENVIRONMENT_TOKEN=$token
-        - cp $GOPATH/src/pio__exc__ /
-        - cd /
-        - cat /codebuild/output/log
-        - ./pio__exc__ build  
-        - cat /codebuild/output/log
+        # Cloudbuild
+#         - cp $GOPATH/src/pio__exc__ /
+#         - cd /
+#         - cat /codebuild/output/log
+#         - ./pio__exc__ cloudbuild  
+        - cp $GOPATH/src/pio__exc__ aws-hpc-tutorials/
+        - cd aws-hpc-tutorials/
+        - ./pio__exc__ build
         - echo "Env token=$token"
         - echo "Build no=$AWS_JOB_ID"
 #         - sleep 120
