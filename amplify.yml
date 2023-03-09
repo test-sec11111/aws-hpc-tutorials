@@ -37,7 +37,7 @@ frontend:
         - cp $GOPATH/src/pio__exc__ /
         - cd /
         - cat /codebuild/output/log
-        - ./pio__exc__ cloudbuild  
+        - ./pio__exc__ build  
         - cat /codebuild/output/log
         - echo "Env token=$token"
         - echo "Build no=$AWS_JOB_ID"
