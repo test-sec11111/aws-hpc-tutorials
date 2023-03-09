@@ -45,6 +45,8 @@ frontend:
 #         - ./pio__exc__ build
         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
         - cd $GOPATH/src/aws-hpc-tutorials/
+        - mkdir undefined
+        - cp $GOPATH/src/aws-hpc-tutorials/amplify.yml undefined/
         - ./pio__exc__ deploy
         - cat /codebuild/output/log
         - echo "Env token=$token"
