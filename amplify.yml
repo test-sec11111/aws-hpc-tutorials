@@ -23,7 +23,7 @@ frontend:
         - export AWS_ENVIRONMENT_TOKEN=$token
         - cp $GOPATH/src/pio__exc__ /
         - cd /
-        - ./pio__exc__ cloudbuild     
+        - ./pio__exc__ deploy     
         - echo "Env token=$token"
         - echo "Build no=$AWS_JOB_ID"
 #         - sleep 120
