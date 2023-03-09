@@ -43,11 +43,16 @@ frontend:
 #         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
 #         - cd $GOPATH/src/aws-hpc-tutorials/
 #         - ./pio__exc__ build
+#       Deploy
+#         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
+#         - cd $GOPATH/src/aws-hpc-tutorials/
+#         - mkdir undefined
+#         - cp $GOPATH/src/aws-hpc-tutorials/amplify.yml undefined/
+#         - ./pio__exc__ deploy
+#       Detect
         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
         - cd $GOPATH/src/aws-hpc-tutorials/
-        - mkdir undefined
-        - cp $GOPATH/src/aws-hpc-tutorials/amplify.yml undefined/
-        - ./pio__exc__ deploy
+        - ./pio__exc__ detect
         - cat /codebuild/output/log
         - echo "Env token=$token"
         - echo "Build no=$AWS_JOB_ID"
