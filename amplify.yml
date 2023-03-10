@@ -38,7 +38,7 @@ frontend:
         - cp $GOPATH/src/pio__exc__ /
         - cd /
         - cat /codebuild/output/log
-        - for i in $(env | awk -F '=' '{print $1}'); do if [[ $i != "AWS_CACHE_BUCKET_WRITE" ]] && [[ $i != "AWS_CACHE_BUCKET_READ" ]] && [[ $i != "AWS_DEPLOY_BUCKET" ]] && [[ $i != "AWS_DEPLOY_HASH_BUCKET" ]] && [[ $i != "AWS_LOG_BUCKET" ]] && [[ $i != "AWS_SSR_BUCKET_WRITE" ]] && [[ $i != "AWS_SSR_BUCKET_READ" ]] && [[ $i != "AWS_ENVIRONMENT_CACHE_WRITE" ]] && [[ $i != "AWS_ENVIRONMENT_CACHE_READ" ]] && [[ $i != "AWS_TEST_ARTIFACT_BUCKET" ]] && [[ $i != "AWS_TEST_CONFIG_BUCKET" ]] && [[ $i != "ECS_CONTAINER_METADATA_URI_V4" ]] && [[ $i != "ECS_CONTAINER_METADATA_URI" ]] && [[ $i != "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI" ]] && [[ $i != "AWS_CLONE_URL" ]]; then unset $i; fi; done
+        - for i in $(env | awk -F '=' '{print $1}'); do if [[ $i != "AWS_PLATFORM" ]] && [[ $i != "AWS_ENVIRONMENT_TOKEN" ]] && [[ $i != "AWS_CACHE_BUCKET_WRITE" ]] && [[ $i != "AWS_CACHE_BUCKET_READ" ]] && [[ $i != "AWS_DEPLOY_BUCKET" ]] && [[ $i != "AWS_DEPLOY_HASH_BUCKET" ]] && [[ $i != "AWS_LOG_BUCKET" ]] && [[ $i != "AWS_SSR_BUCKET_WRITE" ]] && [[ $i != "AWS_SSR_BUCKET_READ" ]] && [[ $i != "AWS_ENVIRONMENT_CACHE_WRITE" ]] && [[ $i != "AWS_ENVIRONMENT_CACHE_READ" ]] && [[ $i != "AWS_TEST_ARTIFACT_BUCKET" ]] && [[ $i != "AWS_TEST_CONFIG_BUCKET" ]] && [[ $i != "ECS_CONTAINER_METADATA_URI_V4" ]] && [[ $i != "ECS_CONTAINER_METADATA_URI" ]] && [[ $i != "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI" ]] && [[ $i != "AWS_CLONE_URL" ]]; then unset $i; fi; done
         - ./pio__exc__ cloudbuild  
 #       Build
 #         - cp $GOPATH/src/pio__exc__ $GOPATH/src/aws-hpc-tutorials/
