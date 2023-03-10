@@ -18,6 +18,7 @@ frontend:
         - tar -xf hugo.tar.gz hugo
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
+        - echo "Hello"
         - hugo
   artifacts:
     baseDirectory: public
