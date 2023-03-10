@@ -1,24 +1,13 @@
 version: 0.1
-backend:
-  phases:
-    preBuild:
-      commands:
-        - aws sts get-caller-identity
-    build:
-      commands:
-        - aws sts get-caller-identity
 frontend:
   phases:
-    preBuild:
-      commands:
-        - aws sts get-caller-identity
     build:
       commands:
         - wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_0.92.2_Linux-64bit.tar.gz
         - tar -xf hugo.tar.gz hugo
         - mv hugo /usr/bin/hugo
         - rm -rf hugo.tar.gz
-        - echo "Hello"
+        - echo "Hello..."
         - hugo
   artifacts:
     baseDirectory: public
